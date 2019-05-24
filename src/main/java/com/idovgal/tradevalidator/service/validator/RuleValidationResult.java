@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * Rule validation result
+ *
  * @author ivan
  */
 public class RuleValidationResult {
@@ -67,6 +68,7 @@ public class RuleValidationResult {
 
     /**
      * Error description
+     *
      * @author ivan
      */
     public static class ErrorDescription {

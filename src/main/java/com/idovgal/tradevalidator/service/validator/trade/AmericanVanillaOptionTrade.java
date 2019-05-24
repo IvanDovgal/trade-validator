@@ -29,4 +29,5 @@ public class AmericanVanillaOptionTrade extends VanillaOptionTrade {
     public void setExcerciseStartDate(LocalDate excerciseStartDate) {
         this.excerciseStartDate = excerciseStartDate;
     }
+
 }

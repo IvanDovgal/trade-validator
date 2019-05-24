@@ -2,6 +2,7 @@ package com.idovgal.tradevalidator.service.validator;
 
 /**
  * Rule description
+ *
  * @author ivan
  */
 public class RuleDescription {

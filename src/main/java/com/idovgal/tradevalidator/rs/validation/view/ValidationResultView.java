@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 /**
  * View for single trade validation
+ *
  * @author ivan
  */
 public class ValidationResultView {

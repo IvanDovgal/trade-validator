@@ -12,6 +12,7 @@ import java.io.IOException;
 
 /**
  * Polymorphic deserializer for trade
+ *
  * @author ivan
  */
 @JsonComponent

@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 
 /**
  * Bridge for jsr380
+ *
  * @author ivan
  */
 @Component

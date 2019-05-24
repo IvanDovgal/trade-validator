@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * @author ivan
@@ -109,6 +110,27 @@ public abstract class VanillaOptionTrade extends Trade {
 
     public void setStrategy(Strategy strategy) {
         this.strategy = strategy;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        VanillaOptionTrade that = (VanillaOptionTrade) o;
+        return Objects.equals(type, that.type) &&
+                Objects.equals(deliveryDate, that.deliveryDate) &&
+                Objects.equals(expiryDate, that.expiryDate) &&
+                Objects.equals(payCcy, that.payCcy) &&
+                Objects.equals(premiumCcy, that.premiumCcy) &&
+                Objects.equals(premiumType, that.premiumType) &&
+                Objects.equals(premiumDate, that.premiumDate) &&
+                strategy == that.strategy;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), type, deliveryDate, expiryDate, payCcy, premiumCcy, premiumType, premiumDate, strategy);
     }
 
     @Override

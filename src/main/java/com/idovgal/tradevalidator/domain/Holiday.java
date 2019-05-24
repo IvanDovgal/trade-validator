@@ -8,6 +8,7 @@ import java.util.UUID;
 
 /**
  * Holiday entity
+ *
  * @author ivan
  */
 @Entity

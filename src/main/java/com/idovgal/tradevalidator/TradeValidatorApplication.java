@@ -29,18 +29,21 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EntityScan(basePackages = "com.idovgal.tradevalidator.domain")
 public class TradeValidatorApplication {
 
+    @Value("${app.cors.origins}")
+    String origins;
+
+    public static void main(String[] args) {
+        SpringApplication.run(TradeValidatorApplication.class, args);
+    }
+
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-          .select()
-          .apis(RequestHandlerSelectors.any())
-          .paths(PathSelectors.any())
-          .build();
+                .select()
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.any())
+                .build();
     }
-
-
-    @Value("${app.cors.origins}")
-    String origins;
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {
@@ -51,10 +54,6 @@ public class TradeValidatorApplication {
                         .allowedOrigins(origins.split(","));
             }
         };
-    }
-
-    public static void main(String[] args) {
-        SpringApplication.run(TradeValidatorApplication.class, args);
     }
 
 }

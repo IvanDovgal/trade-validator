@@ -4,6 +4,7 @@ import com.idovgal.tradevalidator.service.validator.trade.Trade;
 
 /**
  * Interface for a trade check rule
+ *
  * @author ivan
  */
 public interface Rule {
@@ -15,6 +16,7 @@ public interface Rule {
 
     /**
      * determine that the current rule can be applied for given trade
+     *
      * @param trade trade for checking
      * @return true if given rule can be applied for given trade
      */

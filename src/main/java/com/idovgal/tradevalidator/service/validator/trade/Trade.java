@@ -5,13 +5,13 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.google.common.collect.ImmutableMap;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.SwaggerDefinition;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * @author ivan
@@ -141,6 +141,27 @@ public abstract class Trade {
     @JsonIgnore
     public Map<String, String> getCurrencyPairs() {
         return ImmutableMap.of("ccyPair", ccyPair);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Trade trade = (Trade) o;
+        return Objects.equals(customer, trade.customer) &&
+                Objects.equals(trader, trade.trader) &&
+                Objects.equals(ccyPair, trade.ccyPair) &&
+                Objects.equals(legalEntity, trade.legalEntity) &&
+                Objects.equals(tradeDate, trade.tradeDate) &&
+                Objects.equals(amount1, trade.amount1) &&
+                Objects.equals(amount2, trade.amount2) &&
+                Objects.equals(rate, trade.rate) &&
+                direction == trade.direction;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(customer, trader, ccyPair, legalEntity, tradeDate, amount1, amount2, rate, direction);
     }
 
     public enum Direction {

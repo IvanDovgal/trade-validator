@@ -12,6 +12,7 @@ import java.util.stream.IntStream;
 
 /**
  * View for results of batch validation
+ *
  * @author ivan
  */
 public class BathValidationResultView {

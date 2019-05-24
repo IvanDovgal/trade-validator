@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Trade validation result, contains result of validation rules
+ *
  * @author ivan
  */
 public class TradeValidationResult {
